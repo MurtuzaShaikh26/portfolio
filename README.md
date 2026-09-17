@@ -70,6 +70,25 @@ vercel          # preview deploy
 vercel --prod   # production deploy
 ```
 
+## Web Analytics
+
+`index.html` already includes the Vercel Web Analytics snippet, so no package
+install is needed. It stays inert until you switch the feature on:
+
+1. Vercel dashboard → your project → **Analytics** in the sidebar → **Enable**.
+2. Redeploy (any push to `main` will do). Enabling adds the `/_vercel/insights/*`
+   routes that the snippet calls.
+3. Visit the live site, then check the browser Network tab for a request to
+   `/_vercel/insights/view` — that confirms events are being recorded.
+
+Data appears in the Analytics tab shortly after the first visits. The script
+404s during local development, which is expected and harmless.
+
+Vercel also exposes a project-specific script path that is less likely to be
+blocked by ad blockers. If you want it, copy that path from the Analytics setup
+screen and replace `/_vercel/insights` in the `<script defer src="...">` tag at
+the bottom of `index.html`.
+
 ## Accessibility and browser support
 
 - Skip link, semantic landmarks, and visible focus rings throughout.
