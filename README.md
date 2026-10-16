@@ -16,7 +16,7 @@ no dependencies. The only external request is the Inter webfont from Google Font
 └── assets/
     ├── murtuza.jpg                   # profile photo
     ├── fibe.png                      # Fibe logo (Work Experience)
-    └── Murtuza_Shaikh_Resume.pdf     # linked by the "Download CV" buttons
+    └── Murtuza_Shaikh_Resume.pdf     # archived copy; CV buttons link to Google Drive
 ```
 
 ## Local development
