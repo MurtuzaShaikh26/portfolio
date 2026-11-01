@@ -445,13 +445,6 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.7;
 }
 
-.card__authors {
-  margin: .45rem 0 0;
-  font-size: .8125rem;
-  color: var(--muted-foreground);
-  font-style: italic;
-}
-
 /* linked cards (research) */
 .card--link {
   display: flex;
