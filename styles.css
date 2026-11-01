@@ -403,6 +403,13 @@ a { color: inherit; text-decoration: none; }
    ========================================================================== */
 .stack { display: flex; flex-direction: column; gap: .875rem; }
 
+.subhead {
+  margin: 2rem 0 .875rem;
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -.01em;
+}
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);

@@ -35,6 +35,7 @@
       <a href="#work" class="nav__link">Work</a>
       <a href="#projects" class="nav__link">Projects</a>
       <a href="#achievements" class="nav__link">Achievements</a>
+      <a href="#blog" class="nav__link">Blog</a>
     </nav>
 
     <div class="nav__actions">
@@ -55,6 +56,7 @@
     <a href="#work" class="nav__link">Work</a>
     <a href="#projects" class="nav__link">Projects</a>
     <a href="#achievements" class="nav__link">Achievements</a>
+    <a href="#blog" class="nav__link">Blog</a>
   </nav>
 </header>
 
@@ -123,9 +125,9 @@
 <section class="section" id="research">
   <div class="container">
     <header class="section__head">
-      <p class="section__label">Publications</p>
+      <p class="section__label">Publications &amp; Reports</p>
       <h2 class="section__title">Research</h2>
-      <p class="section__sub">Peer-reviewed work on evaluation, bias, and multimodal detection.</p>
+      <p class="section__sub">Peer-reviewed work on evaluation, bias, and multimodal detection, plus recent research sprint reports.</p>
     </header>
 
     <div class="stack">
@@ -165,6 +167,66 @@
         </span>
       </a>
     </div>
+
+    <h3 class="subhead">Research sprint reports</h3>
+
+    <article class="card">
+      <div class="card__body">
+        <div class="card__eyebrow">
+          <span class="badge badge--award">Sprint report</span>
+          Apart Research AI Collusion Research Sprint <span class="dot">·</span> Oct 2026
+        </div>
+        <h3 class="card__title">Sunny with a Chance of Collusion: Replaying LLM Agents to Tell Cartels from Cheap Talk</h3>
+        <p class="card__authors">M. Shaikh, K. Singh, R. Raj</p>
+        <p class="card__desc">
+          Courts cannot re-run a firm&rsquo;s decision, but an auditor can re-run an AI agent&rsquo;s.
+          Counterfactual replay re-queries a logged decision with one input replaced and measures how
+          far the price moves, tested against an LLM judge, price correlation and price-based harm
+          across five cases of known ground truth.
+        </p>
+        <div class="card__actions">
+          <a class="btn btn--sm btn--ghost" href="https://apartresearch.com/sprints/projects/sunny-with-a-chance-of-collusion-replaying-llm-agents-to-tell-cartels-from-cheap-talk-f3tu" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            Project page
+          </a>
+          <a class="btn btn--sm btn--ghost" href="https://pys8vc40ox3z7qxp.public.blob.vercel-storage.com/submissions/ai-collusion-research-sprint-2026-10-23-to-2026-10-25/Sunny_with_a_Chance_of_Collusion__Replaying_LLM_Agents_to_Tell_Cartels_from_Cheap_Talk-rKcjsE2zOufE5JOVxZXkeMoMpkLaid.pdf" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            Report PDF
+          </a>
+          <a class="btn btn--sm btn--ghost" href="https://github.com/MurtuzaShaikh26/AI_Collusion-Apart_Research" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.4-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+            Code
+          </a>
+          <a class="btn btn--sm btn--ghost" href="#blog">Blog post</a>
+          <button class="btn btn--sm btn--soft js-details" type="button" aria-expanded="false" aria-controls="d-sunny">
+            <span class="js-label">Abstract</span>
+            <svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="details" id="d-sunny" hidden>
+        <p>When two AI agents both charge high prices, an auditor must decide whether they agreed to
+        do so or arrived there for innocent reasons. Antitrust law answers this with plus factors:
+        evidence beyond parallel behaviour that only makes sense if the firms agreed. Courts cannot
+        re-run a firm&rsquo;s decision, but an auditor can re-run an AI agent&rsquo;s. We introduce
+        counterfactual replay: re-querying the same model on a logged decision with one input
+        replaced, such as the partner&rsquo;s messages or price history, and measuring how much the
+        price moves. We compare replay with an LLM judge, price correlation and price-based harm in a
+        repeated two-firm pricing game with five constructed cases of known ground truth: an explicit
+        chat cartel, a price agreed in shared instructions, a cartel run through coded weather talk, a
+        common cost shock, and cheap talk from a partner who never colludes. Across about 45,000 calls
+        to DeepSeek V4.1 Flash and Nemotron Lightning 3.5, with a pre-registered analysis, every source
+        of evidence shows a predictable blind spot. The judge scores innocent cheap talk near 7 out of
+        10 and coded collusion at 0. Established cartels are held in place by the partner&rsquo;s price
+        history, not by chat (7 of 7 runs). In exploratory analysis, replay is the only signal that
+        detects the coded cartel (6 of 7 runs, judge score 0). No learned detector recognises a
+        collusion style it was not trained on. We argue for a plus factor scorecard with documented
+        blind spots, backed by input logging.</p>
+
+        <p class="note"><strong>Note:</strong> sprint projects are early-stage work by participants,
+        not Apart Research publications.</p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -709,8 +771,37 @@
   </div>
 </section>
 
+<!-- ============ BLOG ============ -->
+<section class="section section--alt" id="blog">
+  <div class="container">
+    <header class="section__head">
+      <p class="section__label">Writing</p>
+      <h2 class="section__title">Blog</h2>
+      <p class="section__sub">Plain-language write-ups of my research.</p>
+    </header>
+
+    <div class="stack">
+      <a class="card card--link" href="https://medium.com/@murtuzashaikh.2023/sunny-with-a-chance-of-collusion-how-do-you-prove-two-ai-agents-made-a-deal-e1e9342bfeee?sharedUserId=murtuzashaikh.2023" target="_blank" rel="noopener noreferrer">
+        <div class="card__body">
+          <div class="card__eyebrow">Medium <span class="dot">·</span> Oct 2026</div>
+          <h3 class="card__title">Sunny with a Chance of Collusion: How Do You Prove Two AI Agents Made a Deal?</h3>
+          <p class="card__desc">
+            A court can&rsquo;t ask whether a firm would have set the same price without that email,
+            but you can ask an AI agent. How counterfactual replay works, what it caught that an LLM
+            judge missed, and why no single piece of evidence proves collusion.
+          </p>
+          <p class="card__authors">M. Shaikh, K. Singh, R. Raj</p>
+        </div>
+        <span class="card__arrow" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONTACT ============ -->
-<section class="section section--alt" id="contact">
+<section class="section" id="contact">
   <div class="container contact">
     <h2 class="section__title">Get in touch</h2>
     <p class="section__sub">Open to research collaborations and roles in evaluation methodology and model internals.</p>

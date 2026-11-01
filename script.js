@@ -77,12 +77,13 @@
     if (!panel) return;
 
     var label = btn.querySelector('.js-label');
+    var closedText = label ? label.textContent : '';
 
     btn.addEventListener('click', function () {
       var open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
       panel.hidden = open;
-      if (label) label.textContent = open ? 'Details' : 'Hide details';
+      if (label) label.textContent = open ? closedText : 'Hide ' + closedText.toLowerCase();
     });
   });
 

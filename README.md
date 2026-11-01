@@ -1,7 +1,7 @@
 # Murtuza Shaikh — Portfolio
 
 Personal portfolio site. Single-page scroll with anchor navigation:
-Hero → Research → Education → Work Experience → Projects → Achievements → Contact.
+Hero → Research → Education → Work Experience → Projects → Achievements → Blog → Contact.
 
 **Stack:** plain HTML, CSS and vanilla JavaScript. No framework, no build step,
 no dependencies. The only external request is the Inter webfont from Google Fonts.
