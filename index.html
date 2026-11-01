@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Murtuza Shaikh — ML Researcher</title>
-<meta name="description" content="Murtuza Shaikh — ML researcher working on evaluation methodology and model internals. Final-year B.Tech, Mathematics &amp; Scientific Computing, IIIT Gwalior." />
+<title>Murtuza Shaikh | ML Researcher</title>
+<meta name="description" content="Murtuza Shaikh is an ML researcher working on evaluation methodology and model internals. Final-year B.Tech, Mathematics &amp; Scientific Computing, IIIT Gwalior." />
 <meta name="author" content="Murtuza Shaikh" />
 <meta name="theme-color" content="#ffffff" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Murtuza Shaikh — ML Researcher" />
+<meta property="og:title" content="Murtuza Shaikh | ML Researcher" />
 <meta property="og:description" content="ML researcher working on evaluation methodology and model internals. Final-year B.Tech, Mathematics &amp; Scientific Computing, IIIT Gwalior." />
 <meta property="og:image" content="assets/murtuza.jpg" />
 <meta name="twitter:card" content="summary" />
@@ -111,7 +111,7 @@
       machine learning research. Most of my work circles one question: when a model reports a
       result, how do we know the result means what we think it means? That's taken me through
       evaluating LLM hallucination in low-resource languages, building bias annotation datasets
-      for Indian media, and — currently — predicting neural network activations analytically from
+      for Indian media, and, currently, predicting neural network activations analytically from
       weights alone, without ever running the network. I care about the gap between what a
       benchmark measures and what actually happens in deployment, and I like problems where the
       honest answer requires ruling things out rather than piling up evidence for one story.
@@ -159,7 +159,7 @@
             <span class="badge badge--award">Best Paper</span>
             Intl. Conf. of Mathematical and Computational Frontiers <span class="dot">·</span> 2025
           </div>
-          <h3 class="card__title">FIND-IT! — Multimodal Fuzzy Fake Indian News Detection using Images and Text</h3>
+          <h3 class="card__title">FIND-IT! Multimodal Fuzzy Fake Indian News Detection using Images and Text</h3>
           <p class="card__authors">M. Shaikh</p>
         </div>
         <span class="card__arrow" aria-hidden="true">
@@ -283,7 +283,7 @@
           <div class="edu__row">
             <div>
               <h3 class="card__title">PACE Junior Science College</h3>
-              <p class="card__desc">HSC &mdash; Class 12</p>
+              <p class="card__desc">HSC, Class 12</p>
             </div>
             <div class="edu__side"><span class="badge">90.17%</span></div>
           </div>
@@ -295,7 +295,7 @@
           <div class="edu__row">
             <div>
               <h3 class="card__title">RN Podar School</h3>
-              <p class="card__desc">CBSE &mdash; Class 10</p>
+              <p class="card__desc">CBSE, Class 10</p>
             </div>
             <div class="edu__side"><span class="badge">94.66%</span></div>
           </div>
@@ -326,7 +326,7 @@
           from raw bank statements, replacing a keyword rule engine. The system used LLM agents
           for transaction classification across multiple income and obligation categories, with a
           self-learning feedback loop that promoted repeatedly-seen keywords into persistent
-          libraries — turning probabilistic inference into deterministic matching over time.
+          libraries, turning probabilistic inference into deterministic matching over time.
           Deployed to production and evaluated across 15,758 customers.
         </p>
         <div class="stackline">
@@ -368,7 +368,7 @@
           <p class="card__desc">
             Predicting the expected post-ReLU activations of randomly-initialised ReLU MLPs
             analytically from weights alone, without sampling, under a hard FLOP budget.
-            The final estimator scores 1.31e-07 on 50 held-out MLPs — 3.1&times; better than the
+            The final estimator scores 1.31e-07 on 50 held-out MLPs, 3.1&times; better than the
             covariance-propagation baseline and 9.0&times; better than Monte Carlo, at 2.36% of budget.
           </p>
           <div class="stackline">
@@ -390,38 +390,37 @@
         </div>
         <div class="details" id="d-arc" hidden>
           <p>Given the weight matrices of a He-initialised, bias-free ReLU MLP (width 1024, depth 16),
-          the task is to predict the expected post-ReLU activation of every neuron under Gaussian
-          input — without ever running the network. Score is final-layer MSE multiplied by the
+          the task is to predict the expected post-ReLU activation of every neuron under Gaussian input, without ever running the network. Score is final-layer MSE multiplied by the
           fraction of a 2<sup>41</sup> FLOP budget consumed, floored at 10%.</p>
 
           <p><strong>The Mehler closure.</strong> The shipped covariance-propagation baseline closes
           the post-ReLU covariance with a &ldquo;gain&rdquo; rule. I showed that rule is precisely the
           k=1 term of the Mehler expansion of Cov(ReLU(z<sub>i</sub>), ReLU(z<sub>j</sub>)), derived
-          the general Hermite coefficient for k &ge; 2, and carried the series further — verified
+          the general Hermite coefficient for k &ge; 2, and carried the series further, verified
           against brute-force sampling. It works, but it is small: about 5% MSE reduction, converging
           by order 2. So the closure was never the main thing wrong.</p>
 
           <p><strong>Localising the error by oracle injection.</strong> Supplying the true per-layer
           mean improved MSE 19.7&times;, while supplying the true covariance made it <em>worse</em>
           (0.65&times;). All the remaining error lived in the mean path, and the covariance was already
-          good enough. The residual turned out to be almost purely multiplicative — covariance
-          propagation over-predicts by roughly 0.16% — and a greedy per-layer affine non-Gaussianity
+          good enough. The residual turned out to be almost purely multiplicative: covariance
+          propagation over-predicts by roughly 0.16%, and a greedy per-layer affine non-Gaussianity
           fit captures 65% of it.</p>
 
           <p><strong>Documented negative results.</strong> These are a feature of the work, not a
           caveat. An Edgeworth &kappa;&#8324; correction failed even when handed an <em>oracle</em>
-          kurtosis (0.89&times;, worse) — ReLU's kink breaks the expansion, which depends on
+          kurtosis (0.89&times;, worse), because ReLU's kink breaks the expansion, which depends on
           derivatives of the density at exactly that point. Fitting all 16 layer corrections
           simultaneously diverged (300&times; worse), because each layer's residual already contains
           the propagated effect of earlier errors. Correcting the mean without re-deriving the
-          variance from the uncorrected mean made things worse (0.61&times;) — a two-line ordering
+          variance from the uncorrected mean made things worse (0.61&times;), a two-line ordering
           detail worth 4.8&times;. And Monte Carlo could not supply the constants: sampling noise came
           out 5&times; larger than the between-MLP signal it was trying to measure.</p>
 
           <p><strong>Honest caveat, stated in the repo.</strong> The winning submission ships 32
           fitted constants (a per-layer pair) measured on the public suite rather than derived from
           first principles. Cross-fitting on either half of the suite agrees to within 1%, held-out
-          R&sup2; matches in-sample R&sup2;, and per-MLP oracle coefficients are only ~2% better — but
+          R&sup2; matches in-sample R&sup2;, and per-MLP oracle coefficients are only ~2% better, but
           the submission still guards on shape and degrades gracefully to plain Mehler covariance
           propagation (3.83e-07) rather than corrupting on a different configuration.</p>
         </div>
@@ -465,22 +464,20 @@
           <p>Built for the National Health Authority's auto-adjudication problem statement at IISc
           Bangalore: given a bundle of scanned claim documents, decide which pages are which document
           type, and extract the clinical evidence that a package code's Standard Treatment Guidelines
-          actually require. The pipeline covers four package codes — MG064A (severe anemia), SG039C
+          actually require. The pipeline covers four package codes: MG064A (severe anemia), SG039C
           (cholecystectomy), MG006A (enteric fever) and SB039A (total knee replacement).</p>
 
           <p><strong>Two passes, cached.</strong> The first pass runs per-page document-type
           classification and entity extraction; the second runs a per-package clinical-field pass
-          against the STG rules. Every Gemma call is disk-cached, so re-runs cost zero fresh tokens —
-          total usage stayed at 11% of the 25.5M token budget across the whole event.</p>
+          against the STG rules. Every Gemma call is disk-cached, so re-runs cost zero fresh tokens, and total usage stayed at 11% of the 25.5M token budget across the whole event.</p>
 
           <p><strong>What the ablations showed.</strong> Fusing keyword evidence and VLM evidence by
-          <em>intersection</em> beat either signal alone, lifting clinical F1 from 0.757 to 0.791 —
-          the model's false positives and the keyword matcher's false positives were largely disjoint,
+          <em>intersection</em> beat either signal alone, lifting clinical F1 from 0.757 to 0.791. The model's false positives and the keyword matcher's false positives were largely disjoint,
           so requiring agreement cut them without much recall cost. Separately, ablating four
           document-ranking schemes moved rank score from 0.008 to 0.107.</p>
 
           <p><strong>Final scored submission:</strong> mandatory F1 0.9154, clinical F1 0.7909, extra
-          F1 0.7684, rank score 0.1066 — final score 0.7662, second of 40 teams against a held-out
+          F1 0.7684, rank score 0.1066, final score 0.7662, second of 40 teams against a held-out
           organizer evaluator.</p>
         </div>
       </article>
@@ -521,8 +518,7 @@
         <div class="details" id="d-qs" hidden>
           <p>Quantum error correction decoding is normally a job for specialised classical decoders
           like minimum-weight perfect matching. QuantumScribe asks whether a general-purpose language
-          model can learn the same mapping — reading a surface-code syndrome and writing out the
-          correction — and does it on hardware anyone can get for free.</p>
+          model can learn the same mapping, reading a surface-code syndrome and writing out the correction, and does it on hardware anyone can get for free.</p>
 
           <p><strong>Training.</strong> Qwen2.5-3B-Instruct is fine-tuned with LoRA (rank 16), first
           through 50 steps of supervised fine-tuning and then 1,500 steps of GRPO. Crucially the
@@ -532,7 +528,7 @@
 
           <p><strong>Results across the two stages.</strong> Logical correction went from 85.0% after
           SFT to 96.4% after GRPO; format compliance from 26.3% to 100%; Hamming overlap from 0.645 to
-          0.840. The format jump is the clearest evidence that GRPO was doing real work — a verifiable
+          0.840. The format jump is the clearest evidence that GRPO was doing real work: a verifiable
           reward on output structure fixed something SFT alone had not.</p>
 
           <p><strong>Infrastructure.</strong> The environment is an OpenEnv-compliant FastAPI server
@@ -553,9 +549,7 @@
             <span class="tag tag--team">Collaboration with Ronit Raj</span>
           </div>
           <p class="card__desc">
-            An OpenEnv-compliant RL environment that treats LLM inference serving as a control
-            problem — batching, KV-cache budget, speculative decoding depth, quantization and routing
-            — under latency, memory and cost constraints. A trained PPO policy beats hand-tuned
+            An OpenEnv-compliant RL environment that treats LLM inference serving as a control problem (batching, KV-cache budget, speculative decoding depth, quantization and routing) under latency, memory and cost constraints. A trained PPO policy beats hand-tuned
             serving heuristics on all three tasks.
           </p>
           <div class="stackline">
@@ -579,7 +573,7 @@
         <div class="details" id="d-ig" hidden>
           <p>LLMServeEnv models the decision an inference server actually faces: with request traffic
           changing underneath you, how do you set batching and resource policy? The agent controls a
-          typed action — <code>batch_cap</code> (1–512), <code>kv_budget_fraction</code> (0.1–1.0),
+          typed action: <code>batch_cap</code> (1–512), <code>kv_budget_fraction</code> (0.1–1.0),
           <code>speculation_depth</code> (0–8), a quantization tier (FP16/INT8/INT4), whether to split
           prefill from decode, and whether to route by priority.</p>
 
@@ -592,8 +586,7 @@
           <p><strong>Three graded tasks.</strong> <em>static_workload</em> (stable rate, short
           prompts), <em>bursty_workload</em> (bursty arrivals, queue volatility) and
           <em>adversarial_multitenant</em> (mixed prompt lengths, traffic spikes, priority pressure).
-          The design goal was that hand-coded heuristics should not be able to solve it optimally —
-          the workloads are non-stationary and the resource trade-offs are interdependent.</p>
+          The design goal was that hand-coded heuristics should not be able to solve it optimally, because the workloads are non-stationary and the resource trade-offs are interdependent.</p>
 
           <p><strong>Benchmarks.</strong> Across the three tasks, random policies score roughly
           0.05 / 0.03 / 0.02 and a heuristic stack modelled on Orca, vLLM and Decima scores
@@ -639,10 +632,10 @@
         <div class="details" id="d-pm" hidden>
           <p>The forecasting target is a 140&times;124 spatial grid: given 10 hours of lookback across
           29 channels (16 raw, 13 derived), predict PM2.5 for the next 16 hours. The hard part is not
-          average accuracy — it is the pollution <em>episodes</em>, the spikes that matter most and
+          average accuracy but the pollution <em>episodes</em>, the spikes that matter most and
           occur least often.</p>
 
-          <p><strong>Two architectures.</strong> The baseline is an FNO2D — Fourier neural operator
+          <p><strong>Two architectures.</strong> The baseline is an FNO2D: Fourier neural operator
           blocks with spectral convolution, SE and CBAM attention, and a UNet-style decoder. The later
           experiment is a HybridFNOConvLSTMEnsemble: an FNO branch for global spatial structure
           alongside a three-layer ConvLSTM branch for temporal evolution, combined by an adaptive gated
@@ -651,7 +644,7 @@
 
           <p><strong>Training against the episode problem.</strong> The loss is an episode-weighted
           SMAPE with an auxiliary BCE term for episode classification, and training uses a curriculum
-          that escalates the episode weight &alpha; from 1.0 to 5.0 to 8.0 across epochs — so the model
+          that escalates the episode weight &alpha; from 1.0 to 5.0 to 8.0 across epochs, so the model
           learns the general field first and is pushed onto the spikes later. Validation tracks global
           SMAPE, episode SMAPE and episode correlation separately, since a model can look good on the
           first and fail on the other two.</p>
@@ -703,7 +696,7 @@
           128 new tokens per move to force concise JSON output rather than rambling
           chain-of-thought.</p>
 
-          <p><strong>Reward shaping.</strong> The reward is deliberately format-dominant — 60% output
+          <p><strong>Reward shaping.</strong> The reward is deliberately format-dominant: 60% output
           format, 35% move correctness, 5% efficiency. Early on, an agent that reasons well but emits
           unparseable output scores zero, so format has to be learned first before correctness can be
           rewarded at all.</p>
@@ -714,7 +707,7 @@
           training weight. Prompts are tiered across four difficulty levels, from minimal hints on tiny
           boards to comprehensive structural guidance on boards up to 50 cells.</p>
 
-          <p class="note"><strong>Note:</strong> this repository has no README — the description above
+          <p class="note"><strong>Note:</strong> this repository has no README, so the description above
           is reconstructed from the training configuration and the notebooks in the repo.</p>
         </div>
       </article>
@@ -736,7 +729,7 @@
         <div class="ach__rank">1<span>st</span></div>
         <div class="card__body">
           <div class="card__eyebrow">Dec 2024 <span class="dot">·</span> Bharat Electronics Ltd.</div>
-          <h3 class="card__title">Winner — Smart India Hackathon 2024</h3>
+          <h3 class="card__title">Winner, Smart India Hackathon 2024</h3>
           <p class="card__desc">1st of 500 teams nationwide, for a multimodal conversational chatbot.</p>
         </div>
       </div>
@@ -745,7 +738,7 @@
         <div class="ach__rank">2<span>nd</span></div>
         <div class="card__body">
           <div class="card__eyebrow">May 2026 <span class="dot">·</span> NHA &amp; IISc Bangalore</div>
-          <h3 class="card__title">Runner-Up — AB PM-JAY Auto-Adjudication Hackathon</h3>
+          <h3 class="card__title">Runner-Up, AB PM-JAY Auto-Adjudication Hackathon</h3>
           <p class="card__desc">2nd of 40 teams.</p>
         </div>
       </div>
@@ -754,7 +747,7 @@
         <div class="ach__rank">4<span>th</span></div>
         <div class="card__body">
           <div class="card__eyebrow">Feb 2026 <span class="dot">·</span> IIT Delhi</div>
-          <h3 class="card__title">Special Winner — AMD &amp; Unsloth RL Hackathon</h3>
+          <h3 class="card__title">Special Winner, AMD &amp; Unsloth RL Hackathon</h3>
           <p class="card__desc">4th of 60 teams, for a GRPO-trained RL agent for Minesweeper.</p>
         </div>
       </div>
@@ -763,7 +756,7 @@
         <div class="ach__rank ach__rank--sm">Top<span>800</span></div>
         <div class="card__body">
           <div class="card__eyebrow">2026 <span class="dot">·</span> Meta</div>
-          <h3 class="card__title">Finalist — Meta RL Hackathon</h3>
+          <h3 class="card__title">Finalist, Meta RL Hackathon</h3>
           <p class="card__desc">Top 800 of 30,000 teams.</p>
         </div>
       </div>
